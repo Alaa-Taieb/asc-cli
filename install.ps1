@@ -1,25 +1,28 @@
 # ACS CLI Installer for Windows
 # Run with: irm https://raw.githubusercontent.com/Alaa-Taieb/asc-cli/main/install.ps1 | iex
 
-$ErrorActionPreference = "Stop"
-
 Write-Host ""
-Write-Host "  Installing ACS CLI..." -ForegroundColor Cyan
+Write-Host "  Installing Agentic Coding Standard CLI..." -ForegroundColor Cyan
 Write-Host ""
 
 # Install the package
-try {
-    pip install agentic-std --quiet
-    Write-Host "  [OK] Package installed" -ForegroundColor Green
-} catch {
-    Write-Host "  [ERROR] Failed to install package: $_" -ForegroundColor Red
-    exit 1
+$installResult = pip install agentic-std --quiet 2>&1
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "  [ERROR] Failed to install package" -ForegroundColor Red
+    Write-Host "  $installResult" -ForegroundColor Red
+    return
 }
+Write-Host "  [OK] Package installed" -ForegroundColor Green
 
 # Get the Python Scripts directory
-$pythonPath = (Get-Command python).Source
-$pythonDir = Split-Path $pythonPath
-$scriptsDir = Join-Path $pythonDir "Scripts"
+try {
+    $pythonPath = (Get-Command python -ErrorAction Stop).Source
+    $pythonDir = Split-Path $pythonPath
+    $scriptsDir = Join-Path $pythonDir "Scripts"
+} catch {
+    Write-Host "  [WARN] Could not find Python installation" -ForegroundColor Yellow
+    return
+}
 
 # Check if it's a user install (different path)
 $userScriptsDir = Join-Path $env:APPDATA "Python" | Get-ChildItem -Directory -ErrorAction SilentlyContinue | 
@@ -36,7 +39,7 @@ $acsPath = Join-Path $scriptsDir "acs.exe"
 if (-not (Test-Path $acsPath)) {
     Write-Host "  [WARN] Could not locate acs.exe" -ForegroundColor Yellow
     Write-Host "  You may need to add Python Scripts to your PATH manually." -ForegroundColor Yellow
-    exit 0
+    return
 }
 
 # Check if Scripts dir is already in PATH
