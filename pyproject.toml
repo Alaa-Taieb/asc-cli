@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "acs-cli"
+name = "agentic-std"
 version = "0.1.0"
 description = "Agentic Coding Standard CLI - Scaffold .agent/ directories for AI-ready codebases"
 readme = "README.md"
@@ -32,8 +32,8 @@ dependencies = [
 acs = "acs_cli.cli:app"
 
 [project.urls]
-Homepage = "https://github.com/Alaa-Taieb/asc-cli"
-Repository = "https://github.com/Alaa-Taieb/asc-cli"
+Homepage = "https://github.com/Alaa-Taieb/agentic-std"
+Repository = "https://github.com/Alaa-Taieb/agentic-std"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/acs_cli"]

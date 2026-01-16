@@ -9,7 +9,7 @@ echo "  Installing ACS CLI..."
 echo ""
 
 # Install the package
-if pip install acs-cli --quiet 2>/dev/null; then
+if pip install agentic-std --quiet 2>/dev/null; then
     echo "  ✓ Package installed"
 else
     echo "  ✗ Failed to install package"

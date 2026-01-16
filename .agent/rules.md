@@ -5,7 +5,7 @@
 - [x] Language: Python 3.10+
 - [x] CLI Framework: Typer (or Click as alternative)
 - [x] Packaging: `pyproject.toml` with `entry_points` for global CLI access
-- [x] Distribution: PyPI (`pip install acs-cli`)
+- [x] Distribution: PyPI (`pip install agentic-std`)
 - [x] HTTP Client: `requests` or `httpx` (for sync engine)
 
 ## Naming Conventions

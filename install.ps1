@@ -9,7 +9,7 @@ Write-Host ""
 
 # Install the package
 try {
-    pip install acs-cli --quiet
+    pip install agentic-std --quiet
     Write-Host "  [OK] Package installed" -ForegroundColor Green
 } catch {
     Write-Host "  [ERROR] Failed to install package: $_" -ForegroundColor Red

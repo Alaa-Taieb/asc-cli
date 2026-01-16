@@ -1,4 +1,4 @@
-# ACS CLI
+# Agentic Coding Standard CLI
 
 **Agentic Coding Standard CLI** — Scaffold `.agent/` directories for AI-ready codebases.
 
@@ -26,7 +26,7 @@ curl -sSL https://raw.githubusercontent.com/Alaa-Taieb/asc-cli/main/install.sh |
 ### Via pip
 
 ```bash
-pip install acs-cli
+pip install agentic-std
 ```
 
 > **Note:** If using pip directly, ensure Python's Scripts directory is in your PATH.

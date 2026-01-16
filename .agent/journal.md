@@ -7,4 +7,5 @@
 | 2026-01-16 | Store synced templates in `~/.acs/templates/` | Centralized cache location allows sharing across projects | User needs write access to home directory |
 | 2026-01-16 | Stick with `acs` command name | Investigated naming conflict; confirmed it was a local stale issue and no external package conflict exists. | Maintains desired project branding and UX |
 | 2026-01-16 | Provide cross-platform installers | Solves the common "not on PATH" issue for Python CLI tools on Windows and Unix. | Faster and more reliable user onboarding |
+| 2026-01-16 | Rename package to `agentic-std` | Discovered existing `acs-cli` package on PyPI which provided a different CLI tool. Renamed to ensure unique identity while keeping `acs` command. | Enables successful publication to PyPI without naming conflicts |
 | | | | |

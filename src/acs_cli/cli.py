@@ -22,7 +22,7 @@ TEMPLATES_DIR = Path(__file__).parent / "templates"
 def version_callback(value: bool) -> None:
     """Print version and exit."""
     if value:
-        rprint(f"[cyan]acs-cli[/cyan] version [green]{__version__}[/green]")
+        rprint(f"[cyan]agentic-std[/cyan] version [green]{__version__}[/green]")
         raise typer.Exit()
 
 
