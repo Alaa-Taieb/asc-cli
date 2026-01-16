@@ -15,12 +15,12 @@ AI coding agents (Cursor, Windsurf, GitHub Copilot) work best when they have imm
 
 **Windows (PowerShell as Admin):**
 ```powershell
-irm https://raw.githubusercontent.com/Alaa-Taieb/asc-cli/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/Alaa-Taieb/agentic-std/main/install.ps1 | iex
 ```
 
 **macOS/Linux:**
 ```bash
-curl -sSL https://raw.githubusercontent.com/Alaa-Taieb/asc-cli/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/Alaa-Taieb/agentic-std/main/install.sh | bash
 ```
 
 ### Via pip

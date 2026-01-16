@@ -1,14 +1,14 @@
 #!/bin/bash
 # ACS CLI Installer for Unix (macOS/Linux)
-# Run with: curl -sSL https://raw.githubusercontent.com/Alaa-Taieb/asc-cli/main/install.sh | bash
+# Run with: curl -sSL https://raw.githubusercontent.com/Alaa-Taieb/agentic-std/main/install.sh | bash
 
 set -e
 
 echo ""
-echo "  Installing ACS CLI..."
+echo "  Installing Agentic Coding Standard CLI..."
 echo ""
 
-# Install the package
+# Install the package from PyPI
 if pip install agentic-std --quiet 2>/dev/null; then
     echo "  ✓ Package installed"
 else

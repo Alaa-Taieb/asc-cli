@@ -1,16 +1,16 @@
 # ACS CLI Installer for Windows
-# Run with: irm https://raw.githubusercontent.com/Alaa-Taieb/asc-cli/main/install.ps1 | iex
+# Run with: irm https://raw.githubusercontent.com/Alaa-Taieb/agentic-std/main/install.ps1 | iex
 
 & {
     Write-Host ""
     Write-Host "  Installing Agentic Coding Standard CLI..." -ForegroundColor Cyan
     Write-Host ""
 
-    # Install the package from GitHub (until PyPI is available)
-    Write-Host "  Installing package from GitHub..." -ForegroundColor Gray
-    pip install git+https://github.com/Alaa-Taieb/asc-cli.git 2>$null
+    # Install the package from PyPI
+    Write-Host "  Installing package via pip..." -ForegroundColor Gray
+    pip install agentic-std 2>$null
     if (-not $?) {
-        Write-Host "  [ERROR] Failed to install package. Is pip and git installed?" -ForegroundColor Red
+        Write-Host "  [ERROR] Failed to install package. Is pip installed?" -ForegroundColor Red
         Write-Host ""
         return
     }
