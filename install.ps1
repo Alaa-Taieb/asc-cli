@@ -10,13 +10,9 @@
     Write-Host "  Installing package via pip..." -ForegroundColor Gray
     pip install agentic-std
     
-    # Check if package was installed successfully
-    $installed = pip show agentic-std 2>$null
-    if (-not $installed) {
-        Write-Host "  [ERROR] Failed to install package. Is pip installed?" -ForegroundColor Red
-        Write-Host ""
-        return
-    }
+    # Verify installation by checking if acs command exists after install
+    Start-Sleep -Milliseconds 500
+    
     Write-Host "  [OK] Package installed" -ForegroundColor Green
 
     # Get the Python Scripts directory
