@@ -8,8 +8,11 @@
 
     # Install the package from PyPI
     Write-Host "  Installing package via pip..." -ForegroundColor Gray
-    pip install agentic-std 2>$null
-    if (-not $?) {
+    pip install agentic-std
+    
+    # Check if package was installed successfully
+    $installed = pip show agentic-std 2>$null
+    if (-not $installed) {
         Write-Host "  [ERROR] Failed to install package. Is pip installed?" -ForegroundColor Red
         Write-Host ""
         return
